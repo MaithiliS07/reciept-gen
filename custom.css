@@ -1,0 +1,13 @@
+.nav-link.active, .nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #d63384;
+}
+
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: #d63384;
+  text-decoration: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
