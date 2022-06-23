@@ -21,9 +21,18 @@ if(isset($_POST['generatebtn'])){
 
 
     $sql = "INSERT INTO `receipt_details`(`FirmName`, `FirmAddress`, `BillTo`, `BillToAddress`, `Discount`, `SubtotalDiscount`, `TaxRate`, `Shipping`) VALUES ('$fname','$faddress','$billto','$baddress','$discount','$sdiscount','$tax','$shiphandle')";
-    $sql = "INSERT INTO `reciept_items`(`Discription`, `Quantity`, `UnitPrice`) VALUES ('$discription','$quantity','$unitprice')";
+    $sqli = "INSERT INTO `reciept_items`(`Discription`, `Quantity`, `UnitPrice`) VALUES ('$discription','$quantity','$unitprice')";
     
-    if (mysqli_multi_query($conn, $sql)) {
+
+
+if(mysqli_multi_query($conn, $sql)){
+       echo "New record created successfully !";
+    } else {
+       echo "Error: " . $sql . " " . mysqli_error($conn);
+    }
+
+if(mysqli_multi_query($conn, $sqli))
+{ 
        echo "New record created successfully !";
     } else {
        echo "Error: " . $sql . " " . mysqli_error($conn);
